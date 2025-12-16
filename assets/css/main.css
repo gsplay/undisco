@@ -1,97 +1,157 @@
+/* RESET BÁSICO */
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
-  margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #ffffff;
   color: #000000;
+  line-height: 1.6;
 }
 
+/* CONTENEDOR PRINCIPAL */
+
 .disco-entry {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 100%;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center;
 }
 
-/* COVER */
+/* PORTADA */
 
 .cover {
-  display: flex;
-  justify-content: center;
-}
-
-.cover img {
-  width: 90%;
-  max-width: 360px;
-  height: auto;
-  display: block;
-}
-
-/* CONTENT */
-
-.content h1 {
-  font-size: 28px;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.meta {
-  display: flex;
-  gap: 12px;
-  font-size: 14px;
-  opacity: 0.7;
-  margin-bottom: 24px;
-}
-
-.text {
-  font-size: 16px;
-  line-height: 1.6;
+  width: 100%;
   margin-bottom: 32px;
 }
 
-/* ACTIONS */
+.cover img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CONTENIDO */
+
+.content {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* TÍTULO */
+
+.content h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+/* META */
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-bottom: 32px;
+}
+
+/* TEXTO (OPCIONAL) */
+
+.text {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ACCIONES */
 
 .actions {
   display: flex;
-  gap: 24px;
-  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.actions a,
-.actions button {
-  background: none;
-  border: none;
-  padding: 0;
-  color: #000;
-  text-decoration: underline;
-  cursor: pointer;
+/* BOTONES */
+
+.btn {
+  font-size: 1.0625rem; /* ~17px */
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
   font: inherit;
+  cursor: pointer;
+  background: transparent;
+}
+
+.btn.primary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.btn.subtle {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #000000;
 }
 
 /* DESKTOP */
 
 @media (min-width: 768px) {
   .disco-entry {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 48px;
+    max-width: 1088px;
+    margin: 0 auto;
+    padding: 64px 32px;
+    display: grid;
+    grid-template-columns: 512px 512px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .cover {
+    margin-bottom: 0;
   }
 
   .cover img {
     width: 512px;
-    max-width: 512px;
   }
 
   .content {
-    max-width: 420px;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .content h1 {
-    font-size: 32px;
+    font-size: 3.875rem; /* ~62px */
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .meta {
+    font-size: 1.625rem; /* ~26px */
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .text {
+    font-size: 1.125rem;
+    max-width: 48ch;
+  }
+
+  .actions {
+    margin-top: 32px;
   }
 }
