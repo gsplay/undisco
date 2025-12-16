@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} — {{ page.artist }} | undisco</title>
+  <meta name="description" content="Un disco para escuchar completo: {{ page.title }} de {{ page.artist }} ({{ page.year }})." />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+  <main class="disco-entry">
+
+    <div class="cover">
+      <img src="{{ page.cover }}" alt="Portada de {{ page.title }} de {{ page.artist }}">
+    </div>
+
+    <article class="content">
+      <header>
+        <h1>{{ page.title }}</h1>
+        <div class="meta">
+          <span class="artist">{{ page.artist }}</span>
+          <span class="year">{{ page.year }}</span>
+          <span class="style">{{ page.style }}</span>
+        </div>
+      </header>
+
+      {% if content != "" %}
+      <section class="text">
+        {{ content }}
+      </section>
+      {% endif %}
+    </article>
+
+  </main>
+
+</body>
+</html>
