@@ -23,4 +23,93 @@
       background: var(--bg);
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
-      line-heigh
+      line-height: 1.4;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin: 0 0 3rem 0;
+      letter-spacing: 0.02em;
+    }
+
+    .main-button {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      padding: 0.9rem 1.6rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .main-button:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1.5rem;
+      width: 100%;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--muted);
+    }
+
+    footer a:hover {
+      opacity: 0.7;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>undisco.org</h1>
+
+    <button class="main-button" onclick="recomendar()">
+      Recomendame un disco
+    </button>
+  </main>
+
+  <footer>
+    <div></div>
+    <div><a href="#" target="_blank">Recomendar un disco</a></div>
+  </footer>
+
+  <script>
+    function recomendar() {
+      // v1: placeholder
+      alert("Próximo paso: mostrar un disco.");
+    }
+  </script>
+</body>
+</html>
