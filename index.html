@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>undisco.org</title>
 
+  <style>
+    :root {
+      --text: #111;
+      --muted: #777;
+      --line: #eee;
+      --bg: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.4;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: normal;
+      margin: 0 0 3rem 0;
+      letter-spacing: 0.02em;
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text);
+      cursor: pointer;
+      padding: 0;
+      border-bottom: 1px solid var(--text);
+    }
+
+    button:hover {
+      opacity: 0.7;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>undisco.org</h1>
+
+    <button onclick="recomendar()">
+      Recomendame un disco
+    </button>
+  </main>
+
+  <footer>
+    archivo comunitario de discos escuchados enteros
+  </footer>
+
+  <script>
+    function recomendar() {
+      // v1: placeholder
+      // luego esto redirige a un disco random
+      alert("Próximo paso: mostrar un disco.");
+    }
+  </script>
+</body>
+</html>
