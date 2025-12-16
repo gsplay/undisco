@@ -35,11 +35,20 @@
       {% endif %}
 
       <div class="actions">
-        <a href="{{ site.baseurl }}/">Inicio</a>
-        <button onclick="navigator.share ? navigator.share({ title: '{{ page.title }}', url: window.location.href }) : alert('Copiá el link del navegador')">
-          Compartir
-        </button>
-      </div>
+  {% if page.listen %}
+    <a class="btn primary" href="{{ page.listen }}" target="_blank" rel="noopener">
+      Escuchar
+    </a>
+  {% endif %}
+
+  <a class="btn subtle" href="{{ site.baseurl }}/">
+    Inicio
+  </a>
+
+  <button class="btn subtle" onclick="navigator.share ? navigator.share({ title: '{{ page.title }}', url: window.location.href }) : alert('Copiá el link del navegador')">
+    Compartir
+  </button>
+</div>
     </article>
 
   </main>
