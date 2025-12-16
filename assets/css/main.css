@@ -1,1 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #ffffff;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.disco-entry {
+  max-width: 720px;
+  margin: 80px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+}
+
+.cover img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.content h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.meta {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.text {
+  font-size: 16px;
+  max-width: 520px;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .disco-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .cover img {
+    width: 140px;
+    height: 140px;
+  }
+}
 
