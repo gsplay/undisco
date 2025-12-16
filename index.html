@@ -36,7 +36,7 @@
     }
 
     h1 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: normal;
       margin: 0 0 3rem 0;
       letter-spacing: 0.02em;
@@ -60,9 +60,32 @@
     footer {
       position: absolute;
       bottom: 1.5rem;
+      width: 100%;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 0.75rem;
       color: var(--muted);
-      text-align: center;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--muted);
+    }
+
+    footer a:hover {
+      opacity: 0.7;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -77,13 +100,13 @@
   </main>
 
   <footer>
-    archivo comunitario de discos escuchados enteros
+    <div>archivo comunitario de discos escuchados enteros</div>
+    <div><a href="#" target="_blank">Recomendar un disco</a></div>
   </footer>
 
   <script>
     function recomendar() {
       // v1: placeholder
-      // luego esto redirige a un disco random
       alert("Próximo paso: mostrar un disco.");
     }
   </script>
