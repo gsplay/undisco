@@ -1,1 +1,6 @@
-
+title: undisco
+description: Un disco para escuchar de principio a fin
+baseurl: "/undisco"
+url: "https://gsplay.github.io"
+markdown: kramdown
+permalink: pretty
