@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,20 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>{{ page.title }} — undisco.org</title>
-  <meta name="description" content="{{ page.description | default: 'Un disco para escuchar de principio a fin.' }}" />
+  <meta name="description" content="{{ page.artist }} · {{ page.year }} · {{ page.genre }}" />
 
-  <!-- Google Font -->
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #0e0e0e;
       --fg: #eaeaea;
       --muted: #9a9a9a;
-      --line: rgba(255,255,255,0.22);
-      --accent: rgba(255,255,255,0.08);
+      --line: rgba(255,255,255,0.15);
     }
 
     * {
@@ -31,160 +33,143 @@
       background: var(--bg);
       color: var(--fg);
       font-family: 'Montserrat', system-ui, sans-serif;
-      line-height: 1.65;
+      height: 100%;
     }
 
     body {
-      padding: 3rem 1.5rem;
-      position: relative;
-      overflow-x: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
     }
 
-    /* DETALLE DE FONDO */
-
+    /* Fondo ambiental */
     body::before {
       content: "";
       position: fixed;
-      inset: -30%;
+      inset: -20%;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 40%),
-        radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 45%);
+        radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,0.03), transparent 60%);
       pointer-events: none;
-      z-index: 0;
     }
 
-    /* CONTENEDOR */
-
-    .disco {
-      position: relative;
-      z-index: 1;
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
+    main {
+      width: 100%;
+      max-width: 1100px;
+      display: grid;
+      gap: 3rem;
     }
 
-    /* PORTADA */
+    /* Desktop */
+    @media (min-width: 900px) {
+      main {
+        grid-template-columns: 480px 1fr;
+        align-items: center;
+      }
+    }
 
-    .cover-wrapper {
+    /* Imagen */
+    .cover {
       display: flex;
       justify-content: center;
     }
 
     .cover-frame {
-      border: 1px solid var(--line);
-      padding: 1rem;
       width: 100%;
-      max-width: 60%;
-      background: rgba(255,255,255,0.01);
-      backdrop-filter: blur(2px);
+      max-width: 480px;
+      border: 1px solid var(--line);
+      padding: 0.75rem;
     }
 
     .cover-frame img {
       width: 100%;
-      height: auto;
       display: block;
     }
 
-    /* INFO */
-
+    /* Ficha */
     .info {
-      max-width: 680px;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2.4rem;
+      gap: 1.6rem;
     }
 
     h1 {
-      font-size: 2.4rem;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 600;
+    }
+
+    .artist {
+      font-size: 1.4rem;
       font-weight: 500;
-      line-height: 1.15;
+      color: var(--muted);
     }
 
     .meta {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 2rem;
-    }
-
-    .meta-item {
       font-size: 1rem;
-    }
-
-    .meta-item span {
-      display: block;
-      margin-top: 0.25rem;
-      font-size: 0.85rem;
       color: var(--muted);
-      letter-spacing: 0.04em;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .text {
+    .description {
       font-size: 1.05rem;
-      max-width: 54ch;
+      line-height: 1.6;
+      max-width: 520px;
     }
 
-    /* ACCIONES */
-
+    /* Acciones */
     .actions {
       display: flex;
+      align-items: center;
+      gap: 2rem;
       flex-wrap: wrap;
-      gap: 1.4rem;
       margin-top: 1rem;
     }
 
-    .action-link {
+    .listen {
+      padding: 0.9rem 2.4rem;
+      border: 1px solid var(--fg);
       text-decoration: none;
       color: var(--fg);
       font-size: 0.85rem;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding-bottom: 0.2rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .listen:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .link {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease, opacity 0.3s ease;
-      opacity: 0.85;
+      transition: color 0.3s ease, border-color 0.3s ease;
     }
 
-    .action-link:hover {
+    .link:hover {
+      color: var(--fg);
       border-color: var(--fg);
-      opacity: 1;
     }
 
-    /* DESKTOP */
-
-    @media (min-width: 900px) {
-      body {
-        padding: 5rem 3rem;
+    /* Mobile ajuste para no scrollear */
+    @media (max-width: 899px) {
+      main {
+        gap: 2rem;
       }
 
-      .disco {
-        display: grid;
-        grid-template-columns: 460px 1fr;
-        align-items: center;
-        gap: 6rem;
+      .description {
+        font-size: 1rem;
       }
 
-      .cover-frame {
-        max-width: 420px;
-      }
-
-      .info {
-        margin: 0;
-        gap: 3rem;
-      }
-
-      h1 {
-        font-size: 3.1rem;
-      }
-
-      .meta {
-        gap: 2.5rem;
-      }
-
-      .text {
-        font-size: 1.1rem;
+      .actions {
+        gap: 1.4rem;
       }
     }
   </style>
@@ -192,59 +177,49 @@
 
 <body>
 
-  <article class="disco">
+<main>
 
-    <!-- PORTADA -->
-    <div class="cover-wrapper">
-      <div class="cover-frame">
-        <img src="{{ page.cover }}" alt="Portada de {{ page.title }}">
-      </div>
+  <div class="cover">
+    <div class="cover-frame">
+      <img src="{{ page.cover }}" alt="Portada de {{ page.title }}">
+    </div>
+  </div>
+
+  <div class="info">
+    <header>
+      <h1>{{ page.title }}</h1>
+      <div class="artist">{{ page.artist }}</div>
+    </header>
+
+    <div class="meta">
+      <span>{{ page.year }}</span>
+      <span>{{ page.genre }}</span>
     </div>
 
-    <!-- INFO -->
-    <div class="info">
+    {% if page.description %}
+    <div class="description">
+      {{ page.description }}
+    </div>
+    {% endif %}
 
-      <h1>{{ page.title }}</h1>
-
-      <div class="meta">
-        <div class="meta-item">
-          {{ page.artist }}
-          <span>Artista</span>
-        </div>
-        <div class="meta-item">
-          {{ page.year }}
-          <span>Año</span>
-        </div>
-        <div class="meta-item">
-          {{ page.genre }}
-          <span>Género</span>
-        </div>
-      </div>
-
-      {% if content %}
-      <div class="text">
-        {{ content }}
-      </div>
+    <div class="actions">
+      {% if page.listen %}
+      <a href="{{ page.listen }}" class="listen" target="_blank" rel="noopener">
+        Escuchar
+      </a>
       {% endif %}
 
-      <nav class="actions">
-        <a href="{{ site.baseurl }}/" class="action-link">Volver</a>
+      <a href="{{ site.baseurl }}/" class="link">
+        Recomendar otro
+      </a>
 
-        {% if page.listen_url %}
-        <a href="{{ page.listen_url }}" class="action-link" target="_blank" rel="noopener">
-          Escuchar
-        </a>
-        {% endif %}
-
-        <a href="#" class="action-link"
-           onclick="navigator.share ? navigator.share({ title: '{{ page.title }}', url: window.location.href }) : alert('Copiá el link y compartilo'); return false;">
-          Compartir
-        </a>
-      </nav>
-
+      <a href="#" class="link" onclick="navigator.share ? navigator.share({ title: '{{ page.title }}', url: window.location.href }) : alert('Copiá el link y compartilo'); return false;">
+        Compartir
+      </a>
     </div>
+  </div>
 
-  </article>
+</main>
 
 </body>
 </html>
