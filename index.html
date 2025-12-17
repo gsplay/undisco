@@ -18,9 +18,9 @@ layout: null
 
   <style>
     :root {
-      --bg: #ffffff;
-      --fg: #000000;
-      --muted: #6f6f6f;
+      --bg: #0e0e0e;
+      --fg: #eaeaea;
+      --muted: #9a9a9a;
     }
 
     * {
@@ -52,7 +52,6 @@ layout: null
       justify-content: center;
       padding: 4rem 2rem;
       text-align: center;
-      position: relative;
     }
 
     .text {
@@ -61,8 +60,8 @@ layout: null
       font-weight: 300;
       line-height: 1.4;
       opacity: 0;
-      transform: translateY(48px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     section.visible .text {
@@ -72,61 +71,60 @@ layout: null
 
     .muted {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
       letter-spacing: 0.04em;
       margin-top: 1.5rem;
     }
 
-    /* Indicador de scroll */
-    /* Flecha fija de scroll */
+    /* Flecha fija */
+    .scroll-hint {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0.7;
+    }
 
-.scroll-hint {
-  position: fixed;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  opacity: 0.6;
-}
+    .scroll-hint span {
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid var(--fg);
+      border-bottom: 2px solid var(--fg);
+      transform: rotate(45deg);
+      animation: arrowFloat 2.2s ease-in-out infinite;
+    }
 
-.scroll-hint span {
-  width: 10px;
-  height: 10px;
-  border-right: 1.5px solid var(--fg);
-  border-bottom: 1.5px solid var(--fg);
-  transform: rotate(45deg);
-  animation: arrowFloat 2.4s ease-in-out infinite;
-}
+    @keyframes arrowFloat {
+      0% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0.3;
+      }
+      50% {
+        transform: rotate(45deg) translate(0, 8px);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0.3;
+      }
+    }
 
-@keyframes arrowFloat {
-  0% {
-    transform: rotate(45deg) translate(0, 0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: rotate(45deg) translate(0, 6px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: rotate(45deg) translate(0, 0);
-    opacity: 0.3;
-  }
-}
-
-    /* Botón recomendar */
+    /* Botón */
     .recommend {
       display: inline-block;
-      padding: 1.1rem 3.2rem;
+      padding: 1.2rem 3rem;
       border: 1px solid var(--fg);
       text-decoration: none;
       color: var(--fg);
-      font-size: 0.9rem;
-      letter-spacing: 0.18em;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       transition: background 0.4s ease, color 0.4s ease;
     }
@@ -136,82 +134,76 @@ layout: null
       color: var(--bg);
     }
 
-    /* Sombra ambiental sutil */
+    /* Sombra ambiental */
     body::before {
       content: "";
       position: fixed;
       inset: -20%;
-      background: radial-gradient(circle at top left, rgba(0,0,0,0.06), transparent 60%);
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 60%);
       pointer-events: none;
-      transition: transform 0.8s ease;
+      transition: transform 0.6s ease;
     }
 
     body.scrolled::before {
-      transform: translate(4%, 4%);
+      transform: translate(5%, 5%);
     }
   </style>
 </head>
 
 <body>
-      <div class="scroll-hint">
-        <span></span>
-      </div>
 
-<main>
+  <!-- Flecha fija -->
+  <div class="scroll-hint">
+    <span></span>
+  </div>
 
-  <section>
-    <div>
+  <main>
+
+    <section>
+      <div class="text">Bienvenido a <strong>undisco.org</strong></div>
+    </section>
+
+    <section>
       <div class="text">
-        Bienvenido a <strong>undisco.org</strong>
+        El mejor recomendador de discos para <br>escucha activa en internet
       </div>
-  </section>
+    </section>
 
-  <section>
-    <div class="text">
-      Un lugar para recomendar discos<br>
-      que valen la pena escuchar completos
-    </div>
-  </section>
+    <section>
+      <div class="text">
+        Acá no hay listas infinitas.<br>No hay algoritmos ansiosos.
+      </div>
+    </section>
 
-  <section>
-    <div class="text">
-      Sin listas infinitas.<br>
-      Sin rankings.<br>
-      Sin apuro.
-    </div>
-  </section>
+    <section>
+      <div class="text">
+        Un solo disco.<br>Elegido con intención.
+        <div class="muted">Para escuchar de principio a fin.</div>
+      </div>
+    </section>
 
-  <section>
-    <div class="text">
-      Un disco.<br>
-      Elegido por alguien.<br>
-      Escuchado con atención.
-      <div class="muted">De principio a fin.</div>
-    </div>
-  </section>
+    <section>
+      <a href="{{ site.baseurl }}/discos/kind-of-blue/" class="recommend">
+        Recomendar
+      </a>
+    </section>
 
-  <section>
-    <a href="{{ site.baseurl }}/discos/kind-of-blue/" class="recommend">
-      Recomendar
-    </a>
-  </section>
+  </main>
 
-</main>
+  <script>
+    const sections = document.querySelectorAll('section');
 
-<script>
-  const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          document.body.classList.add('scrolled');
+        }
+      });
+    }, { threshold: 0.5 });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        document.body.classList.add('scrolled');
-      }
-    });
-  }, { threshold: 0.5 });
-
-  sections.forEach(section => observer.observe(section));
-</script>
+    sections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
