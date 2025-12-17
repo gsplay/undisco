@@ -39,6 +39,7 @@ layout: null
 
     body {
       overflow-x: hidden;
+      position: relative;
     }
 
     main {
@@ -77,54 +78,35 @@ layout: null
     }
 
     /* Flecha fija */
-    .scroll-hint {
+    .scroll-indicator {
       position: fixed;
-      bottom: 32px;
+      bottom: 2rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 24px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
+      width: 2px;
+      height: 64px;
+      cursor: pointer;
+      background: linear-gradient(to bottom, transparent, var(--fg), transparent);
+      animation: scrollPulse 2s infinite;
       z-index: 10;
-      opacity: 0.7;
+      opacity: 0.8;
     }
 
-    .scroll-hint span {
-      width: 12px;
-      height: 12px;
-      border-right: 2px solid var(--fg);
-      border-bottom: 2px solid var(--fg);
-      transform: rotate(45deg);
-      animation: arrowFloat 2.2s ease-in-out infinite;
+    @keyframes scrollPulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
     }
 
-    @keyframes arrowFloat {
-      0% {
-        transform: rotate(45deg) translate(0, 0);
-        opacity: 0.3;
-      }
-      50% {
-        transform: rotate(45deg) translate(0, 8px);
-        opacity: 1;
-      }
-      100% {
-        transform: rotate(45deg) translate(0, 0);
-        opacity: 0.3;
-      }
-    }
-
-    /* Botón */
+    /* Botón recomendar */
     .recommend {
       display: inline-block;
       padding: 1.2rem 3rem;
       border: 1px solid var(--fg);
       text-decoration: none;
       color: var(--fg);
-      font-size: 1rem;
-      letter-spacing: 0.12em;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       transition: background 0.4s ease, color 0.4s ease;
     }
@@ -134,76 +116,99 @@ layout: null
       color: var(--bg);
     }
 
-    /* Sombra ambiental */
+    /* Fondo sutil */
     body::before {
       content: "";
       position: fixed;
-      inset: -20%;
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 60%);
+      inset: -30%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 45%),
+        radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 50%);
       pointer-events: none;
       transition: transform 0.6s ease;
     }
 
     body.scrolled::before {
-      transform: translate(5%, 5%);
+      transform: translate(4%, 4%);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Flecha fija -->
-  <div class="scroll-hint">
-    <span></span>
-  </div>
+<div class="scroll-indicator" id="scrollDown"></div>
 
-  <main>
+<main>
 
-    <section>
-      <div class="text">Bienvenido a <strong>undisco.org</strong></div>
-    </section>
+  <section>
+    <div class="text">Bienvenido a <strong>undisco.org</strong></div>
+  </section>
 
-    <section>
-      <div class="text">
-        El mejor recomendador de discos para <br>escucha activa en internet
-      </div>
-    </section>
+  <section>
+    <div class="text">
+      Un lugar para recomendar discos<br>
+      para escucharlos completos
+    </div>
+  </section>
 
-    <section>
-      <div class="text">
-        Acá no hay listas infinitas.<br>No hay algoritmos ansiosos.
-      </div>
-    </section>
+  <section>
+    <div class="text">
+      No hay rankings.<br>
+      No hay algoritmos.
+    </div>
+  </section>
 
-    <section>
-      <div class="text">
-        Un solo disco.<br>Elegido con intención.
-        <div class="muted">Para escuchar de principio a fin.</div>
-      </div>
-    </section>
+  <section>
+    <div class="text">
+      Un solo disco.<br>
+      Elegido con intención.
+      <div class="muted">De principio a fin.</div>
+    </div>
+  </section>
 
-    <section>
-      <a href="{{ site.baseurl }}/discos/kind-of-blue/" class="recommend">
-        Recomendar
-      </a>
-    </section>
+  <section>
+    <a href="{{ site.baseurl }}/discos/kind-of-blue/" class="recommend">
+      Recomendar
+    </a>
+  </section>
 
-  </main>
+</main>
 
-  <script>
-    const sections = document.querySelectorAll('section');
+<script>
+  const sections = document.querySelectorAll('section');
+  const scrollBtn = document.getElementById('scrollDown');
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          document.body.classList.add('scrolled');
-        }
-      });
-    }, { threshold: 0.5 });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        document.body.classList.add('scrolled');
+      }
+    });
+  }, { threshold: 0.5 });
 
-    sections.forEach(section => observer.observe(section));
-  </script>
+  sections.forEach(section => observer.observe(section));
+
+  scrollBtn.addEventListener('click', () => {
+    const currentScroll = window.scrollY;
+
+    for (let i = 0; i < sections.length; i++) {
+      const top = sections[i].offsetTop;
+      const height = sections[i].offsetHeight;
+
+      if (top > currentScroll + 10) {
+        const center =
+          top - (window.innerHeight / 2) + (height / 2);
+
+        window.scrollTo({
+          top: center,
+          behavior: 'smooth'
+        });
+        break;
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
