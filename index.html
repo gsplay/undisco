@@ -11,18 +11,184 @@ layout: null
   <meta name="description" content="Un disco. Para escuchar de principio a fin." />
   <meta name="robots" content="index, follow" />
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --muted: #6f6f6f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Montserrat', system-ui, sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .text {
+      max-width: 720px;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 300;
+      line-height: 1.4;
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    section.visible .text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      margin-top: 1.5rem;
+    }
+
+    /* Indicador de scroll */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 64px;
+      background: linear-gradient(to bottom, transparent, var(--fg), transparent);
+      animation: scrollPulse 2.2s infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes scrollPulse {
+      0%   { opacity: 0.2; }
+      50%  { opacity: 0.8; }
+      100% { opacity: 0.2; }
+    }
+
+    /* Botón recomendar */
+    .recommend {
+      display: inline-block;
+      padding: 1.1rem 3.2rem;
+      border: 1px solid var(--fg);
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .recommend:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    /* Sombra ambiental sutil */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20%;
+      background: radial-gradient(circle at top left, rgba(0,0,0,0.06), transparent 60%);
+      pointer-events: none;
+      transition: transform 0.8s ease;
+    }
+
+    body.scrolled::before {
+      transform: translate(4%, 4%);
+    }
+  </style>
 </head>
 
 <body>
 
-  <main class="home">
-    <a href="{{ site.baseurl }}/discos/kind-of-blue/" class="vinyl">
-      <span class="label">
-        Recomendame<br>un disco
-      </span>
+<main>
+
+  <section>
+    <div>
+      <div class="text">
+        Bienvenido a <strong>undisco.org</strong>
+      </div>
+      <div class="scroll-indicator"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="text">
+      Un lugar para recomendar discos<br>
+      que valen la pena escuchar completos
+    </div>
+  </section>
+
+  <section>
+    <div class="text">
+      Sin listas infinitas.<br>
+      Sin rankings.<br>
+      Sin apuro.
+    </div>
+  </section>
+
+  <section>
+    <div class="text">
+      Un disco.<br>
+      Elegido por alguien.<br>
+      Escuchado con atención.
+      <div class="muted">De principio a fin.</div>
+    </div>
+  </section>
+
+  <section>
+    <a href="{{ site.baseurl }}/discos/kind-of-blue/" class="recommend">
+      Recomendar
     </a>
-  </main>
+  </section>
+
+</main>
+
+<script>
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        document.body.classList.add('scrolled');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
