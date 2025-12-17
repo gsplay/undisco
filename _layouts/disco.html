@@ -1,175 +1,157 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <title>{{ page.title }} — {{ page.artist }} | undisco</title>
 
-  <title>{{ page.title }} — undisco.org</title>
-  <meta name="description" content="{{ page.artist }} · {{ page.year }} · {{ page.genre }}" />
+  <meta name="description" content="Un disco para escuchar completo: {{ page.title }} de {{ page.artist }} ({{ page.year }})." />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 
   <style>
-    :root {
-      --bg: #0e0e0e;
-      --fg: #eaeaea;
-      --muted: #9a9a9a;
-      --line: rgba(255,255,255,0.15);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Montserrat', system-ui, sans-serif;
-      height: 100%;
-    }
-
     body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
+      background: #0e0e0e;
+      color: #eaeaea;
+      font-family: 'Montserrat', system-ui, sans-serif;
     }
 
-    /* Fondo ambiental */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -20%;
-      background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 55%),
-        radial-gradient(circle at bottom left, rgba(255,255,255,0.03), transparent 60%);
-      pointer-events: none;
-    }
-
-    main {
-      width: 100%;
-      max-width: 1100px;
-      display: grid;
-      gap: 3rem;
-    }
-
-    /* Desktop */
-    @media (min-width: 900px) {
-      main {
-        grid-template-columns: 480px 1fr;
-        align-items: center;
-      }
-    }
-
-    /* Imagen */
-    .cover {
-      display: flex;
-      justify-content: center;
-    }
-
-    .cover-frame {
-      width: 100%;
-      max-width: 480px;
-      border: 1px solid var(--line);
-      padding: 0.75rem;
-    }
-
-    .cover-frame img {
-      width: 100%;
-      display: block;
-    }
-
-    /* Ficha */
-    .info {
+    .disco-entry {
+      min-height: 100vh;
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 1.6rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* IMAGEN */
+    .cover {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .cover img {
+      width: 70%;
+      max-width: 260px;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 6px;
+      background: #000;
+    }
+
+    /* CONTENIDO */
+    .content {
+      text-align: center;
+      max-width: 420px;
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.1;
-      font-weight: 600;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 8px;
     }
 
     .artist {
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--muted);
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-bottom: 6px;
     }
 
     .meta {
-      font-size: 1rem;
-      color: var(--muted);
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      font-size: 0.95rem;
+      opacity: 0.65;
+      margin-bottom: 24px;
     }
 
-    .description {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      max-width: 520px;
-    }
-
-    /* Acciones */
-    .actions {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
+    /* BOTÓN ESCUCHAR */
     .listen {
-      padding: 0.9rem 2.4rem;
-      border: 1px solid var(--fg);
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 14px 36px;
+      border: 1px solid #eaeaea;
       text-decoration: none;
-      color: var(--fg);
-      font-size: 0.85rem;
+      color: #eaeaea;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      font-size: 0.85rem;
       transition: background 0.3s ease, color 0.3s ease;
     }
 
     .listen:hover {
-      background: var(--fg);
-      color: var(--bg);
+      background: #eaeaea;
+      color: #0e0e0e;
     }
 
-    .link {
-      font-size: 0.9rem;
-      color: var(--muted);
+    /* ACCIONES SECUNDARIAS */
+    .actions {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    .actions a {
+      color: inherit;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: color 0.3s ease, border-color 0.3s ease;
     }
 
-    .link:hover {
-      color: var(--fg);
-      border-color: var(--fg);
+    .actions a:hover {
+      opacity: 1;
     }
 
-    /* Mobile ajuste para no scrollear */
-    @media (max-width: 899px) {
-      main {
-        gap: 2rem;
+    /* DESKTOP — NO TOCAR */
+    @media (min-width: 768px) {
+      .disco-entry {
+        max-width: 1088px;
+        margin: 0 auto;
+        padding: 64px 32px;
+        display: grid;
+        grid-template-columns: 512px 512px;
+        gap: 64px;
+        align-items: center;
+        justify-content: center;
       }
 
-      .description {
-        font-size: 1rem;
+      .cover {
+        justify-content: flex-end;
+        margin-bottom: 0;
+      }
+
+      .cover img {
+        width: 100%;
+        max-width: 512px;
+      }
+
+      .content {
+        text-align: left;
+        max-width: none;
+      }
+
+      h1 {
+        font-size: 3.875rem;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+
+      .artist {
+        font-size: 1.5rem;
+      }
+
+      .meta {
+        font-size: 1.2rem;
+        margin-bottom: 32px;
+      }
+
+      .listen {
+        margin-bottom: 40px;
       }
 
       .actions {
-        gap: 1.4rem;
+        justify-content: flex-start;
+        gap: 32px;
       }
     }
   </style>
@@ -177,47 +159,32 @@ layout: null
 
 <body>
 
-<main>
+<main class="disco-entry">
 
   <div class="cover">
-    <div class="cover-frame">
-      <img src="{{ site.baseurl }}{{ page.cover }}" alt="Portada de {{ page.title }}">
-    </div>
+    <img src="{{ site.baseurl }}{{ page.cover }}" alt="Portada de {{ page.title }} de {{ page.artist }}">
   </div>
 
-  <div class="info">
-    <header>
-      <h1>{{ page.title }}</h1>
-      <div class="artist">{{ page.artist }}</div>
-    </header>
+  <article class="content">
+    <h1>{{ page.title }}</h1>
+
+    <div class="artist">{{ page.artist }}</div>
 
     <div class="meta">
-      <span>{{ page.year }}</span>
-      <span>{{ page.genre }}</span>
+      {{ page.year }} · {{ page.genre }}
     </div>
 
-    {% if page.description %}
-    <div class="description">
-      {{ page.description }}
-    </div>
-    {% endif %}
-
-    <div class="actions">
-      {% if page.listen %}
+    {% if page.listen %}
       <a href="{{ page.listen }}" class="listen" target="_blank" rel="noopener">
         Escuchar
       </a>
-      {% endif %}
+    {% endif %}
 
-      <a href="{{ site.baseurl }}/" class="link">
-        Recomendar otro
-      </a>
-
-      <a href="#" class="link" onclick="navigator.share ? navigator.share({ title: '{{ page.title }}', url: window.location.href }) : alert('Copiá el link y compartilo'); return false;">
-        Compartir
-      </a>
+    <div class="actions">
+      <a href="{{ site.baseurl }}/">Recomendar otro</a>
+      <a href="#">Compartir</a>
     </div>
-  </div>
+  </article>
 
 </main>
 
