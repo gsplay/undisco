@@ -7,54 +7,75 @@
   <meta name="description" content="Un disco para escuchar completo: {{ page.title }} de {{ page.artist }} ({{ page.year }})." />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      background: #0e0e0e;
-      color: #eaeaea;
-      font-family: 'Montserrat', system-ui, sans-serif;
+    :root {
+      --bg: #0e0e0e;
+      --fg: #eaeaea;
+      --muted: rgba(255,255,255,0.65);
+      --border: rgba(255,255,255,0.35);
     }
 
-    .disco-entry {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Montserrat', system-ui, sans-serif;
       min-height: 100vh;
-      padding: 24px;
+    }
+
+    main.disco-entry {
+      min-height: 100vh;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
 
-    /* IMAGEN */
+    /* -------- PORTADA -------- */
+
     .cover {
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+      margin-top: -16px; /* sube visualmente la portada en mobile */
     }
 
     .cover img {
-      width: 70%;
-      max-width: 260px;
-      border: 1px solid rgba(255,255,255,0.35);
+      width: 62%;
+      max-width: 220px;
+      border: 1px solid var(--border);
       padding: 6px;
       background: #000;
     }
 
-    /* CONTENIDO */
+    /* -------- CONTENIDO -------- */
+
     .content {
-      text-align: center;
+      width: 100%;
       max-width: 420px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.75rem;
       font-weight: 500;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .artist {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      font-weight: 400;
       opacity: 0.85;
       margin-bottom: 6px;
     }
@@ -62,49 +83,79 @@
     .meta {
       font-size: 0.95rem;
       opacity: 0.65;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
-    /* BOTÓN ESCUCHAR */
+    /* -------- ACCIONES PRINCIPALES -------- */
+
+    .primary-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
     .listen {
-      display: inline-block;
-      margin-bottom: 24px;
-      padding: 14px 36px;
-      border: 1px solid #eaeaea;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border: 1px solid var(--fg);
+      color: var(--fg);
       text-decoration: none;
-      color: #eaeaea;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
-      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
       transition: background 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
     }
 
     .listen:hover {
-      background: #eaeaea;
-      color: #0e0e0e;
+      background: var(--fg);
+      color: var(--bg);
     }
 
-    /* ACCIONES SECUNDARIAS */
-    .actions {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      opacity: 0.6;
+    .share {
+      width: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--fg);
+      transition: background 0.3s ease;
     }
 
-    .actions a {
+    .share img {
+      width: 18px;
+      height: 18px;
+      filter: invert(1);
+    }
+
+    .share:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* -------- ACCIÓN SECUNDARIA -------- */
+
+    .secondary {
+      font-size: 0.75rem;
+      opacity: 0.5;
+      margin-top: 8px;
+    }
+
+    .secondary a {
       color: inherit;
       text-decoration: none;
     }
 
-    .actions a:hover {
-      opacity: 1;
+    .secondary a:hover {
+      opacity: 0.85;
     }
 
-    /* DESKTOP — NO TOCAR */
+    /* ================= DESKTOP ================= */
+    /* NO CAMBIAR ESTRUCTURA — solo ajuste estético */
+
     @media (min-width: 768px) {
-      .disco-entry {
+      main.disco-entry {
         max-width: 1088px;
         margin: 0 auto;
         padding: 64px 32px;
@@ -112,12 +163,11 @@
         grid-template-columns: 512px 512px;
         gap: 64px;
         align-items: center;
-        justify-content: center;
       }
 
       .cover {
         justify-content: flex-end;
-        margin-bottom: 0;
+        margin: 0;
       }
 
       .cover img {
@@ -133,7 +183,7 @@
       h1 {
         font-size: 3.875rem;
         line-height: 1.1;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
       }
 
       .artist {
@@ -142,16 +192,25 @@
 
       .meta {
         font-size: 1.2rem;
-        margin-bottom: 32px;
+        margin-bottom: 28px;
       }
 
-      .listen {
-        margin-bottom: 40px;
-      }
-
-      .actions {
+      .primary-actions {
         justify-content: flex-start;
-        gap: 32px;
+      }
+
+      /* BOTÓN MÁS CHICO EN DESKTOP */
+      .listen {
+        padding: 12px 24px;
+        font-size: 0.75rem;
+      }
+
+      .share {
+        width: 44px;
+      }
+
+      .secondary {
+        margin-top: 32px;
       }
     }
   </style>
@@ -166,6 +225,7 @@
   </div>
 
   <article class="content">
+
     <h1>{{ page.title }}</h1>
 
     <div class="artist">{{ page.artist }}</div>
@@ -174,16 +234,22 @@
       {{ page.year }} · {{ page.genre }}
     </div>
 
-    {% if page.listen %}
-      <a href="{{ page.listen }}" class="listen" target="_blank" rel="noopener">
-        Escuchar
-      </a>
-    {% endif %}
+    <div class="primary-actions">
+      {% if page.listen %}
+        <a href="{{ page.listen }}" class="listen" target="_blank" rel="noopener">
+          Escuchar
+        </a>
+      {% endif %}
 
-    <div class="actions">
-      <a href="{{ site.baseurl }}/">Recomendar otro</a>
-      <a href="#">Compartir</a>
+      <a href="#" class="share" aria-label="Compartir">
+        <img src="{{ site.baseurl }}/assets/img/share.svg" alt="Compartir">
+      </a>
     </div>
+
+    <div class="secondary">
+      <a href="{{ site.baseurl }}/">Home</a>
+    </div>
+
   </article>
 
 </main>
