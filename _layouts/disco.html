@@ -17,7 +17,8 @@
       --bg: #0e0e0e;
       --fg: #eaeaea;
       --muted: #9a9a9a;
-      --line: rgba(255,255,255,0.25);
+      --line: rgba(255,255,255,0.22);
+      --accent: rgba(255,255,255,0.08);
     }
 
     * {
@@ -30,21 +31,38 @@
       background: var(--bg);
       color: var(--fg);
       font-family: 'Montserrat', system-ui, sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     body {
       padding: 3rem 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* DETALLE DE FONDO */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 40%),
+        radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 45%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     /* CONTENEDOR */
 
     .disco {
-      max-width: 1100px;
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 3.5rem;
     }
 
     /* PORTADA */
@@ -59,6 +77,8 @@
       padding: 1rem;
       width: 100%;
       max-width: 60%;
+      background: rgba(255,255,255,0.01);
+      backdrop-filter: blur(2px);
     }
 
     .cover-frame img {
@@ -70,32 +90,23 @@
     /* INFO */
 
     .info {
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 1.8rem;
+      gap: 2.4rem;
     }
 
     h1 {
       font-size: 2.4rem;
       font-weight: 500;
-      line-height: 1.2;
-    }
-
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
+      line-height: 1.15;
     }
 
     .meta {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .meta-item {
@@ -104,40 +115,41 @@
 
     .meta-item span {
       display: block;
+      margin-top: 0.25rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 0.2rem;
+      letter-spacing: 0.04em;
     }
 
     .text {
       font-size: 1.05rem;
-      color: var(--fg);
-      max-width: 52ch;
+      max-width: 54ch;
     }
 
-    /* LINKS / ESCUCHAR */
+    /* ACCIONES */
 
     .actions {
-      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.4rem;
+      margin-top: 1rem;
     }
 
-    .btn {
-      padding: 0.9rem 1.6rem;
-      border: 1px solid var(--fg);
+    .action-link {
       text-decoration: none;
       color: var(--fg);
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      transition: background 0.3s ease, color 0.3s ease;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, opacity 0.3s ease;
+      opacity: 0.85;
     }
 
-    .btn:hover {
-      background: var(--fg);
-      color: var(--bg);
+    .action-link:hover {
+      border-color: var(--fg);
+      opacity: 1;
     }
 
     /* DESKTOP */
@@ -149,9 +161,9 @@
 
       .disco {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 460px 1fr;
         align-items: center;
-        gap: 4rem;
+        gap: 6rem;
       }
 
       .cover-frame {
@@ -160,21 +172,20 @@
 
       .info {
         margin: 0;
+        gap: 3rem;
       }
 
       h1 {
-        font-size: 3rem;
+        font-size: 3.1rem;
       }
-    }
 
-    /* SUTIL ALMA */
+      .meta {
+        gap: 2.5rem;
+      }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -20%;
-      background: radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 60%);
-      pointer-events: none;
+      .text {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -216,13 +227,20 @@
       </div>
       {% endif %}
 
-      <div class="actions">
+      <nav class="actions">
+        <a href="{{ site.baseurl }}/" class="action-link">Volver</a>
+
         {% if page.listen_url %}
-        <a href="{{ page.listen_url }}" class="btn" target="_blank" rel="noopener">
+        <a href="{{ page.listen_url }}" class="action-link" target="_blank" rel="noopener">
           Escuchar
         </a>
         {% endif %}
-      </div>
+
+        <a href="#" class="action-link"
+           onclick="navigator.share ? navigator.share({ title: '{{ page.title }}', url: window.location.href }) : alert('Copiá el link y compartilo'); return false;">
+          Compartir
+        </a>
+      </nav>
 
     </div>
 
