@@ -31,10 +31,10 @@ layout: null
 
     html, body {
       height: 100%;
-      scroll-behavior: smooth;
       background: var(--bg);
       color: var(--fg);
       font-family: 'Montserrat', system-ui, sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -77,19 +77,47 @@ layout: null
       margin-top: 1.5rem;
     }
 
-    /* Flecha fija */
+    /* INDICADOR SCROLL (círculo + línea + flecha) */
+
     .scroll-indicator {
       position: fixed;
       bottom: 2rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 2px;
-      height: 64px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      background: linear-gradient(to bottom, transparent, var(--fg), transparent);
-      animation: scrollPulse 2s infinite;
       z-index: 10;
-      opacity: 0.8;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+
+    .scroll-indicator:hover {
+      opacity: 1;
+    }
+
+    .scroll-indicator .line {
+      width: 2px;
+      height: 16px;
+      background: var(--fg);
+      animation: scrollPulse 2s infinite;
+    }
+
+    .scroll-indicator .arrow {
+      font-size: 10px;
+      line-height: 1;
+      margin-top: 2px;
+      opacity: 0.7;
+    }
+
+    .scroll-indicator .arrow::before {
+      content: "↓";
     }
 
     @keyframes scrollPulse {
@@ -98,7 +126,19 @@ layout: null
       100% { opacity: 0.2; }
     }
 
-    /* Botón recomendar */
+    @media (max-width: 600px) {
+      .scroll-indicator {
+        width: 48px;
+        height: 48px;
+      }
+
+      .scroll-indicator .line {
+        height: 18px;
+      }
+    }
+
+    /* BOTÓN FINAL */
+
     .recommend {
       display: inline-block;
       padding: 1.2rem 3rem;
@@ -116,7 +156,8 @@ layout: null
       color: var(--bg);
     }
 
-    /* Fondo sutil */
+    /* FONDO SUTIL */
+
     body::before {
       content: "";
       position: fixed;
@@ -136,7 +177,10 @@ layout: null
 
 <body>
 
-<div class="scroll-indicator" id="scrollDown"></div>
+<div class="scroll-indicator" id="scrollDown">
+  <span class="line"></span>
+  <span class="arrow"></span>
+</div>
 
 <main>
 
