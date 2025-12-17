@@ -78,23 +78,45 @@ layout: null
     }
 
     /* Indicador de scroll */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 64px;
-      background: linear-gradient(to bottom, transparent, var(--fg), transparent);
-      animation: scrollPulse 2.2s infinite;
-      opacity: 0.5;
-    }
+    /* Flecha fija de scroll */
 
-    @keyframes scrollPulse {
-      0%   { opacity: 0.2; }
-      50%  { opacity: 0.8; }
-      100% { opacity: 0.2; }
-    }
+.scroll-hint {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.scroll-hint span {
+  width: 10px;
+  height: 10px;
+  border-right: 1.5px solid var(--fg);
+  border-bottom: 1.5px solid var(--fg);
+  transform: rotate(45deg);
+  animation: arrowFloat 2.4s ease-in-out infinite;
+}
+
+@keyframes arrowFloat {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(45deg) translate(0, 6px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.3;
+  }
+}
 
     /* Botón recomendar */
     .recommend {
@@ -142,8 +164,6 @@ layout: null
       <div class="text">
         Bienvenido a <strong>undisco.org</strong>
       </div>
-      <div class="scroll-indicator"></div>
-    </div>
   </section>
 
   <section>
