@@ -1,57 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>{{ page.title }} — {{ page.artist }} | undisco</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="description" content="Un disco para escuchar completo: {{ page.title }} de {{ page.artist }} ({{ page.year }})." />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — undisco.org</title>
+  <meta name="description" content="{{ page.description | default: 'Un disco para escuchar de principio a fin.' }}" />
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --fg: #eaeaea;
+      --muted: #9a9a9a;
+      --line: rgba(255,255,255,0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Montserrat', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    body {
+      padding: 3rem 1.5rem;
+    }
+
+    /* CONTENEDOR */
+
+    .disco {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* PORTADA */
+
+    .cover-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cover-frame {
+      border: 1px solid var(--line);
+      padding: 1rem;
+      width: 100%;
+      max-width: 60%;
+    }
+
+    .cover-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* INFO */
+
+    .info {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .meta-item {
+      font-size: 1rem;
+    }
+
+    .meta-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    .text {
+      font-size: 1.05rem;
+      color: var(--fg);
+      max-width: 52ch;
+    }
+
+    /* LINKS / ESCUCHAR */
+
+    .actions {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.9rem 1.6rem;
+      border: 1px solid var(--fg);
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    /* DESKTOP */
+
+    @media (min-width: 900px) {
+      body {
+        padding: 5rem 3rem;
+      }
+
+      .disco {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      .cover-frame {
+        max-width: 420px;
+      }
+
+      .info {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    /* SUTIL ALMA */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20%;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 60%);
+      pointer-events: none;
+    }
+  </style>
 </head>
+
 <body>
 
-  <main class="disco-entry">
+  <article class="disco">
 
-    <div class="cover">
-      <img src="{{ site.baseurl }}{{ page.cover }}" alt="Portada de {{ page.title }} de {{ page.artist }}">
+    <!-- PORTADA -->
+    <div class="cover-wrapper">
+      <div class="cover-frame">
+        <img src="{{ page.cover }}" alt="Portada de {{ page.title }}">
+      </div>
     </div>
 
-    <article class="content">
-      <header>
-        <h1>{{ page.title }}</h1>
+    <!-- INFO -->
+    <div class="info">
 
-        <div class="meta">
-          <span>{{ page.artist }}</span>
-          <span>{{ page.year }}</span>
-          <span>{{ page.style }}</span>
+      <h1>{{ page.title }}</h1>
+
+      <div class="meta">
+        <div class="meta-item">
+          {{ page.artist }}
+          <span>Artista</span>
         </div>
-      </header>
+        <div class="meta-item">
+          {{ page.year }}
+          <span>Año</span>
+        </div>
+        <div class="meta-item">
+          {{ page.genre }}
+          <span>Género</span>
+        </div>
+      </div>
 
-      {% if content != "" %}
-      <section class="text">
+      {% if content %}
+      <div class="text">
         {{ content }}
-      </section>
+      </div>
       {% endif %}
 
       <div class="actions">
-  {% if page.listen %}
-    <a class="btn primary" href="{{ page.listen }}" target="_blank" rel="noopener">
-      Escuchar
-    </a>
-  {% endif %}
+        {% if page.listen_url %}
+        <a href="{{ page.listen_url }}" class="btn" target="_blank" rel="noopener">
+          Escuchar
+        </a>
+        {% endif %}
+      </div>
 
-  <a class="btn subtle" href="{{ site.baseurl }}/">
-    Inicio
-  </a>
+    </div>
 
-  <button class="btn subtle" onclick="navigator.share ? navigator.share({ title: '{{ page.title }}', url: window.location.href }) : alert('Copiá el link del navegador')">
-    Compartir
-  </button>
-</div>
-    </article>
-
-  </main>
+  </article>
 
 </body>
 </html>
