@@ -2,10 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+
   <title>{{ page.title }} — {{ page.artist }} | undisco</title>
 
   <meta name="description" content="Un disco para escuchar completo: {{ page.title }} de {{ page.artist }} ({{ page.year }})." />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ================= METADATA SOCIAL ================= -->
+
+  <!-- Open Graph / Facebook / Instagram DM -->
+  <meta property="og:type" content="music.album">
+  <meta property="og:site_name" content="undisco.org">
+  <meta property="og:title" content="{{ page.title }} — {{ page.artist }}">
+  <meta property="og:description" content="Un disco para escuchar de principio a fin. {{ page.title }} ({{ page.year }}) de {{ page.artist }}.">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.cover }}">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }} — {{ page.artist }}">
+  <meta name="twitter:description" content="Un disco. Elegido con intención.">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ page.cover }}">
+
+  <!-- ==================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
