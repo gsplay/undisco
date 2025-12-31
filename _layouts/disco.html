@@ -31,15 +31,13 @@
 
 <!-- ===== Twitter / X ===== -->
 
+<!-- Twitter / X Cards -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title"
-      content="{{ page.title }} — {{ page.artist }}">
-<meta name="twitter:description"
-      content="Un disco para escuchar completo.">
-{% if page.cover %}
-<meta name="twitter:image"
-      content="{{ site.url }}{{ site.baseurl }}{{ page.cover }}">
-{% endif %}
+<meta name="twitter:title" content="{{ page.title }} — {{ page.artist }}">
+<meta name="twitter:description" content="Un disco al día para escuchar completo. Hoy: {{ page.title }} ({{ page.year }} · {{ page.genre }}).">
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ page.cover }}">
+<meta name="twitter:image:alt" content="Portada de {{ page.title }} de {{ page.artist }}">
+
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
