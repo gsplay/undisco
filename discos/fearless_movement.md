@@ -1,13 +1,10 @@
+---
+layout: disco
+title: Fearless Movement
+artist: Kamasi Washington
+year: 2024
+genre: Jazz
+cover: /assets/covers/fearless_movement.jpg
+listen: https://tidal.com/album/356732598/u
+---
 
-
-
-
-Fearless Movement
-Kamasi Washington 
-2024
-Jazz
-https://tidal.com/album/356732598/u
-
-fearless_movement.md
-
-fearless_movement.jpg
