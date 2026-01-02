@@ -4,186 +4,166 @@ layout: null
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWL3JCT910"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YWL3JCT910');
 </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>undisco.online</title>
-  <meta name="description" content="Un disco. Para escuchar de principio a fin." />
-  <meta name="robots" content="index, follow" />
+<title>undisco — Un disco para escuchar de principio a fin</title>
+<meta name="description" content="Un disco. Para escuchar de principio a fin. Sin rankings, sin algoritmos. Un solo disco, elegido con intención." />
+<meta name="robots" content="index, follow" />
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- ================= Open Graph (Facebook / WhatsApp / Instagram) ================= -->
 
-  <style>
-    :root {
-      --bg: #0e0e0e;
-      --fg: #eaeaea;
-      --muted: #9a9a9a;
-    }
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="undisco.online">
+<meta property="og:title" content="undisco — Un disco para escuchar de principio a fin">
+<meta property="og:description" content="Un disco. Para escuchar de principio a fin. Sin rankings, sin algoritmos. Un solo disco, elegido con intención.">
+<meta property="og:url" content="https://undisco.online/">
+<meta property="og:image" content="https://undisco.online/assets/img/undisco.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Una mano eligiendo discos de vinilo. undisco.online">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<!-- ================= Twitter / X ================= -->
 
-    html, body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Montserrat', system-ui, sans-serif;
-      scroll-behavior: smooth;
-    }
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="undisco — Un disco para escuchar de principio a fin">
+<meta name="twitter:description" content="Un disco al día para escuchar completo. Sin rankings ni algoritmos.">
+<meta name="twitter:image" content="https://undisco.online/assets/img/undisco.jpg">
 
-    body {
-      overflow-x: hidden;
-      position: relative;
-    }
+<!-- ================= Fuentes ================= -->
 
-    main {
-      width: 100%;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-    section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --fg: #eaeaea;
+    --muted: #9a9a9a;
+  }
 
-    .text {
-      max-width: 720px;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 300;
-      line-height: 1.4;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    section.visible .text {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Montserrat', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
 
-    .muted {
-      color: var(--muted);
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      margin-top: 1.5rem;
-    }
+  body {
+    overflow-x: hidden;
+    position: relative;
+  }
 
-    /* INDICADOR SCROLL (círculo + línea + flecha) */
+  main { width: 100%; }
 
-    .scroll-indicator {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-      opacity: 0.85;
-      transition: opacity 0.3s ease;
-    }
+  section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
 
-    .scroll-indicator:hover {
-      opacity: 1;
-    }
+  .text {
+    max-width: 720px;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 300;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
 
-    .scroll-indicator .line {
-      width: 2px;
-      height: 16px;
-      background: var(--fg);
-      animation: scrollPulse 2s infinite;
-    }
+  section.visible .text {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    .scroll-indicator .arrow {
-      font-size: 10px;
-      line-height: 1;
-      margin-top: 2px;
-      opacity: 0.7;
-    }
+  .muted {
+    color: var(--muted);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    margin-top: 1.5rem;
+  }
 
-    .scroll-indicator .arrow::before {
-      content: "↓";
-    }
+  .scroll-indicator {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.85;
+  }
 
-    @keyframes scrollPulse {
-      0% { opacity: 0.2; }
-      50% { opacity: 1; }
-      100% { opacity: 0.2; }
-    }
+  .scroll-indicator .line {
+    width: 2px;
+    height: 16px;
+    background: var(--fg);
+    animation: scrollPulse 2s infinite;
+  }
 
-    @media (max-width: 600px) {
-      .scroll-indicator {
-        width: 48px;
-        height: 48px;
-      }
+  .scroll-indicator .arrow::before {
+    content: "↓";
+    font-size: 10px;
+    opacity: 0.7;
+  }
 
-      .scroll-indicator .line {
-        height: 18px;
-      }
-    }
+  @keyframes scrollPulse {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+  }
 
-    /* BOTÓN FINAL */
+  .recommend {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border: 1px solid var(--fg);
+    text-decoration: none;
+    color: var(--fg);
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
 
-    .recommend {
-      display: inline-block;
-      padding: 1.2rem 3rem;
-      border: 1px solid var(--fg);
-      text-decoration: none;
-      color: var(--fg);
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      transition: background 0.4s ease, color 0.4s ease;
-    }
+  .recommend:hover {
+    background: var(--fg);
+    color: var(--bg);
+  }
 
-    .recommend:hover {
-      background: var(--fg);
-      color: var(--bg);
-    }
-
-    /* FONDO SUTIL */
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -30%;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 45%),
-        radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 50%);
-      pointer-events: none;
-      transition: transform 0.6s ease;
-    }
-
-    body.scrolled::before {
-      transform: translate(4%, 4%);
-    }
-  </style>
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 45%),
+      radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 50%);
+    pointer-events: none;
+  }
+</style>
 </head>
 
 <body>
@@ -194,39 +174,18 @@ layout: null
 </div>
 
 <main>
-
-  <section>
-    <div class="text">Bienvenido a <strong>undisco.online</strong></div>
-  </section>
-
+  <section><div class="text">Bienvenido a <strong>undisco.online</strong></div></section>
+  <section><div class="text">Un lugar para recomendar discos<br>para escucharlos completos</div></section>
+  <section><div class="text">No hay rankings.<br>No hay algoritmos.</div></section>
   <section>
     <div class="text">
-      Un lugar para recomendar discos<br>
-      para escucharlos completos
-    </div>
-  </section>
-
-  <section>
-    <div class="text">
-      No hay rankings.<br>
-      No hay algoritmos.
-    </div>
-  </section>
-
-  <section>
-    <div class="text">
-      Un solo disco.<br>
-      Elegido con intención.
+      Un solo disco.<br>Elegido con intención.
       <div class="muted">De principio a fin.</div>
     </div>
   </section>
-
   <section>
-   <a href="{{ site.baseurl }}/discos/last/" class="recommend">
-  Recomendar
-</a>
+    <a href="{{ site.baseurl }}/discos/last/" class="recommend">Recomendar</a>
   </section>
-
 </main>
 
 <script>
@@ -235,10 +194,7 @@ layout: null
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        document.body.classList.add('scrolled');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.5 });
 
@@ -246,17 +202,10 @@ layout: null
 
   scrollBtn.addEventListener('click', () => {
     const currentScroll = window.scrollY;
-
-    for (let i = 0; i < sections.length; i++) {
-      const top = sections[i].offsetTop;
-      const height = sections[i].offsetHeight;
-
-      if (top > currentScroll + 10) {
-        const center =
-          top - (window.innerHeight / 2) + (height / 2);
-
+    for (let section of sections) {
+      if (section.offsetTop > currentScroll + 10) {
         window.scrollTo({
-          top: center,
+          top: section.offsetTop - window.innerHeight / 2 + section.offsetHeight / 2,
           behavior: 'smooth'
         });
         break;
