@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Gemini Rights
-artist: Steve Lacy
-year: 2022
-genre: R&B
-cover: /assets/covers/gemini_rights.jpg
-listen: https://tidal.com/album/242279258/u
+title: Fearless Movement
+artist: Kamasi Washington
+year: 2024
+genre: Jazz
+cover: /assets/covers/fearless_movement.jpg
+listen: https://tidal.com/album/356732598/u
 ---
