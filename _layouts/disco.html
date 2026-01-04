@@ -24,38 +24,36 @@
 
 <!-- ===== Open Graph ===== -->
 
-<meta property="og:type" content="music.album">
-<meta property="og:site_name" content="undisco.org">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="undisco.online">
 
 <meta property="og:title"
-      content="{{ page.title }} — {{ page.artist }}">
+      content="undisco.online">
 
 <meta property="og:description"
-      content="Un disco para escuchar completo. {{ page.year }} · {{ page.genre }}">
+      content="Un album por dia. Sin algoritmos. Solo para escuchar.">
 
 <meta property="og:url"
-      content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+      content="https://undisco.online">
 
-{% if page.cover %}
 <meta property="og:image"
-      content="{{ site.url }}{{ site.baseurl }}{{ page.cover }}?v={{ page.date | date: '%s' }}">
+      content="https://undisco.online/assets/img/undisco_.jpg">
 <meta property="og:image:alt"
-      content="Portada de {{ page.title }} de {{ page.artist }}">
+      content="undisco.online — un album por dia">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="1200">
-{% endif %}
 
 <!-- ===== Twitter / X ===== -->
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title"
-      content="{{ page.title }} — {{ page.artist }}">
+      content="undisco.online">
 <meta name="twitter:description"
-      content="Un disco para escuchar completo. {{ page.year }} · {{ page.genre }}">
+      content="Un album por dia. Sin algoritmo. Solo para escuchar.">
 <meta name="twitter:image"
-      content="{{ site.url }}{{ site.baseurl }}{{ page.cover }}?v={{ page.date | date: '%s' }}">
+      content="https://undisco.online/assets/img/undisco_.jpg">
 <meta name="twitter:image:alt"
-      content="Portada de {{ page.title }} de {{ page.artist }}">
+      content="undisco.online — un album por dia">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
