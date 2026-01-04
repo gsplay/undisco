@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Fearless Movement
-artist: Kamasi Washington
-year: 2024
-genre: Jazz
-cover: /assets/covers/fearless_movement.jpg
-listen: https://tidal.com/album/356732598/u
+title: IGOR
+artist: Tyler, The Creator 
+year: 2019
+genre: Hip Hop
+cover: /assets/covers/igor.jpg
+listen: https://tidal.com/album/109485854/u
 ---
