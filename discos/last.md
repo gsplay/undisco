@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: IGOR
-artist: Tyler, The Creator 
+title: Coolin' Off
+artist: Galactic
 year: 2019
-genre: Hip Hop
-cover: /assets/covers/igor.jpg
-listen: https://tidal.com/album/109485854/u
+genre: Jazz
+cover: /assets/covers/coolin_off.jpg
+listen: https://tidal.com/album/33979410/u
 ---
