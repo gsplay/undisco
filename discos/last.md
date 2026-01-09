@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Gotcha Now Doc
-artist: Cory Henry
-year: 2012
-genre: Jazz
-cover: /assets/covers/gotcha_now_doc.jpg
-listen: https://tidal.com/album/25623620/u
+title: La revancha del tango
+artist: Gotan Project
+year: 2001
+genre: Electronica
+cover: /assets/covers/la-revancha-del-tango.jpg
+listen: https://tidal.com/album/13937742/u
 ---
