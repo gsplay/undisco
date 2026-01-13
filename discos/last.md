@@ -7,3 +7,4 @@ genre: Jazz
 cover: /assets/covers/enchantment.jpg
 listen: https://tidal.com/album/8821507/u
 ---
+ok.
