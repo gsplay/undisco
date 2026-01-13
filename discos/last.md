@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Stretch Music
-artist: Chief Adjuah
-year: 2017
+title: Enchantment
+artist: Hilton Ruiz
+year: 1977
 genre: Jazz
-cover: /assets/covers/stretch_music.jpg
-listen: https://tidal.com/album/253962496/u
+cover: /assets/covers/enchantment.jpg
+listen: https://tidal.com/album/8821507/u
 ---
