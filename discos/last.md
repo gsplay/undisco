@@ -1,10 +1,9 @@
 ---
 layout: disco
-title: Enchantment
-artist: Hilton Ruiz
-year: 1977
-genre: Jazz
-cover: /assets/covers/enchantment.jpg
-listen: https://tidal.com/album/8821507/u
+title: Portishead
+artist: Portishead
+year: 1997
+genre: Electrónica
+cover: /assets/covers/portishead.jpg
+listen: https://tidal.com/album/632078/u
 ---
-ok.
