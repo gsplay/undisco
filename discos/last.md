@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Tore Down House
-artist: Scott Henderson
-year: 1997
-genre: Jazz
-cover: /assets/covers/tore_down_house.jpg
-listen: https://tidal.com/album/3461458/u
+title: Jessico
+artist: Babasónicos
+year: 2001
+genre: Pop Psicodélico
+cover: /assets/covers/jessico.jpg
+listen: https://tidal.com/album/5040861/u
 ---
