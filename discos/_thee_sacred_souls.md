@@ -7,3 +7,4 @@ genre: Soul
 cover: /assets/covers/thee_sacred_souls.jpg
 listen: https://tidal.com/album/225579114/u
 --- 
+
