@@ -7,3 +7,4 @@ genre: Hip Hop
 cover: /assets/covers/to_pimp_a_butterfly.jpg
 listen: https://tidal.com/album/43732748/u
 ---
+
