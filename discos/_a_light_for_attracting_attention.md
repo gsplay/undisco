@@ -1,0 +1,9 @@
+---
+layout: disco
+title: A Light for Attracting Attention
+artist: The Smile
+year: 2022
+genre: Art Rock / Post-Punk / Jazz Fusion
+cover: /assets/covers/a_light_for_attracting_attention.jpg
+listen: https://tidal.com/album/225753010/u
+---
