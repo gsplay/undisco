@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Jessico
-artist: Babasónicos
-year: 2001
-genre: Pop Psicodélico
-cover: /assets/covers/jessico.jpg
-listen: https://tidal.com/album/5040861/u
+title: Willy Crook & Funky Torinos
+artist: Willy Crook
+year: 1997
+genre: Funk / Soul
+cover: /assets/covers/willy_crook_and_funky_torinos.jpg
+listen: https://tidal.com/album/91362411/u
 ---
