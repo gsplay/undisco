@@ -1,0 +1,10 @@
+---
+layout: disco
+title: Einstein on the Beach
+artist: Philip Glass
+year: 1976
+genre: Classical / Minimalism / Opera
+cover: /assets/covers/glass_einstein_on_the_beach.jpg
+listen: https://tidal.com/album/1886566/u
+---
+archivo: glass_einstein_on_the_beach.md
