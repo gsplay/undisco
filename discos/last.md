@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Must Be a Dream
-artist: Tempesst
+title: Niguiri Sessions
+artist: Dante Spinetta
 year: 2020
-genre: Psychedelic Pop / Rock
-cover: /assets/covers/must_be_a_dream.jpg
-listen: https://tidal.com/album/146196570/u
+genre: Neo-Soul
+cover: /assets/covers/niguiri_sessions.jpg
+listen: https://tidal.com/album/144482463/u
 ---
