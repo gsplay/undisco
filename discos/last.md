@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Man It Feels Like Space Again
-artist: Pond
-year: 2015
-genre: Psychedelic Rock
-cover: /assets/covers/man_it_feels_like_space_again.jpg
-listen: https://tidal.com/album/475743082/u
+title: A Go Go
+artist: John Scofield
+year: 1998
+genre: Jazz
+cover: /assets/covers/a_go_go.jpg
+listen: https://tidal.com/album/4859079/u
 ---
