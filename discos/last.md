@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: A Go Go
-artist: John Scofield
-year: 1998
-genre: Jazz
-cover: /assets/covers/a_go_go.jpg
-listen: https://tidal.com/album/4859079/u
+title: Voodoo
+artist: D'Angelo
+year: 2000
+genre: R&B
+cover: /assets/covers/voodoo.jpg
+listen: https://tidal.com/album/68338517/u
 ---
