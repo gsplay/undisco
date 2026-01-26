@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Voodoo
-artist: D'Angelo
-year: 2000
-genre: R&B
-cover: /assets/covers/voodoo.jpg
-listen: https://tidal.com/album/68338517/u
+title: Mockroot
+artist: Tigran Hamasyan
+year: 2015
+genre: Jazz
+cover: /assets/covers/mockroot.jpg
+listen: https://tidal.com/album/68588995/u
 ---
