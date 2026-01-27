@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Mockroot
-artist: Tigran Hamasyan
+title: Ego Death
+artist: The Internet
 year: 2015
-genre: Jazz
-cover: /assets/covers/mockroot.jpg
-listen: https://tidal.com/album/68588995/u
+genre: Soul / R&B / Funk
+cover: /assets/covers/ego_death.jpg
+listen: https://tidal.com/album/47223082/u
 ---
