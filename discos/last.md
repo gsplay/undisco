@@ -1,9 +1,10 @@
 ---
 layout: disco
-title: Ego Death
-artist: The Internet
-year: 2015
-genre: Soul / R&B / Funk
-cover: /assets/covers/ego_death.jpg
-listen: https://tidal.com/album/47223082/u
+title: Spinetta y las Bandas Eternas
+artist: Luis Alberto Spinetta
+year: 2010
+genre: Rock
+cover: /assets/covers/spinetta_y_las_bandas_eternas.jpg
+listen: https://tidal.com/album/67478029/u
 ---
+
