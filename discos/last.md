@@ -1,10 +1,10 @@
 ---
 layout: disco
-title: Spinetta y las Bandas Eternas
-artist: Luis Alberto Spinetta
-year: 2010
-genre: Rock
-cover: /assets/covers/spinetta_y_las_bandas_eternas.jpg
-listen: https://tidal.com/album/67478029/u
+title: Still Life
+artist: The Rolling Stones
+year: 1982
+genre: Rock / Live
+cover: /assets/covers/still_life.jpg
+listen: https://tidal.com/album/3168096/u
 ---
 
