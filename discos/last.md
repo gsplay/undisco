@@ -1,11 +1,9 @@
----
 layout: disco
-title: Malibu
-artist: Anderson .Paak
-year: 2016
-genre: R&B
-cover: /assets/covers/malibu.jpg
-listen: https://tidal.com/album/55010255/u	
+title: Tripolar
+artist: Usted Señalemelo
+year: 2023
+genre: Indie Rock / Alternative Pop
+cover: /assets/covers/tripolar.jpg
+listen: https://tidal.com/album/296302951/u
 ---
-
 
