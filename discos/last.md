@@ -1,3 +1,4 @@
+---
 layout: disco
 title: Tripolar
 artist: Usted Señalemelo
