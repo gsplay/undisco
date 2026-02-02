@@ -1,10 +1,10 @@
 ---
 layout: disco
-title: Colores Santos
-artist: Gustavo Cerati - Daniel Melero
-year: 1992
-genre: Alternative Rock / Electronic
-cover: /assets/covers/colores_santos.jpg
-listen: https://tidal.com/album/151741826/u
+title: A Light for Attracting Attention
+artist: The Smile
+year: 2022
+genre: Art Rock / Post-Punk / Jazz Fusion
+cover: /assets/covers/a_light_for_attracting_attention.jpg
+listenr: https://tidal.com/album/225753010/u
 ---
 
