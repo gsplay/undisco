@@ -1,10 +1,9 @@
 ---
 layout: disco
-title: A Light for Attracting Attention
-artist: The Smile
-year: 2022
-genre: Art Rock
-cover: /assets/covers/a_light_for_attracting_attention.jpg
-listen: https://tidal.com/album/225753010/u
+title: Speak No Evil (The Rudy Van Gelder Edition)
+artist: Wayne Shorter
+year: 1966
+genre: Jazz
+cover: /assets/covers/speak_no_evil.jpg
+listen: https://tidal.com/album/1381740/u
 ---
-
