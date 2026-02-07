@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Amar la trama
-artist: Jorge Drexler
-year: 2010
-genre: Canción de Autor
-cover: /assets/covers/amar_la_ trama.jpg
-listen: https://tidal.com/album/3538103/u
+title: Anti-Hero
+artist: Kneebody
+year: 2017
+genre: Jazz
+cover: /assets/covers/anti_hero.jpg
+listen: https://tidal.com/album/79538204/u
 ---
