@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Anti-Hero
-artist: Kneebody
-year: 2017
+title: MINT JAMS (Live)
+artist: Casiopea
+year: 1982
 genre: Jazz
-cover: /assets/covers/anti_hero.jpg
-listen: https://tidal.com/album/79538204/u
+cover: /assets/covers/mint_jams_live.jpg
+listen: https://tidal.com/album/157660479/u
 ---
