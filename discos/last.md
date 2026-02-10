@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: MINT JAMS (Live)
-artist: Casiopea
-year: 1982
-genre: Jazz
-cover: /assets/covers/mint_jams_live.jpg
-listen: https://tidal.com/album/157660479/u
+title: Infame
+artist: Babasónicos
+year: 2003
+genre: Alternative Rock / Pop
+cover: /assets/covers/infame.jpg
+listen: https://tidal.com/album/5057814/u
 ---
