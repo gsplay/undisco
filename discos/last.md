@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Infame
-artist: Babasónicos
-year: 2003
-genre: Alternative Rock / Pop
-cover: /assets/covers/infame.jpg
-listen: https://tidal.com/album/5057814/u
+title: The Fall-Off
+artist: J. Cole
+year: 2026
+genre: Hip Hop
+cover: /assets/covers/IMG_0492.jpg
+listen: https://tidal.com/album/496439179/u
 ---
