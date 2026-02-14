@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Ninja Mental (MTV Unplugged)
-artist: Illya Kuryaki & The Valderramas
-year: 1996
-genre: Funk / Hip Hop
-cover: /assets/covers/ninja_mental.jpg
-listen: https://tidal.com/album/2134267/u
+title: Racing Mount Pleasant
+artist: Racing Mount Pleasant
+year: 2025
+genre: Indie Folk
+cover: /assets/covers/racing_mount_pleasant.jpg
+listen: https://tidal.com/album/447151886/u
 ---
