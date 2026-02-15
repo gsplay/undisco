@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Racing Mount Pleasant
-artist: Racing Mount Pleasant
-year: 2025
-genre: Indie Folk
-cover: /assets/covers/racing_mount_pleasant.jpg
-listen: https://tidal.com/album/447151886/u
+title: Cardellino
+artist: Cardellino
+year: 2021
+genre: R&B / Indie Pop
+cover: /assets/covers/cardellino.jpg
+listen: https://tidal.com/album/160464940/u
 ---
