@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Cardellino
-artist: Cardellino
-year: 2021
-genre: R&B / Indie Pop
-cover: /assets/covers/cardellino.jpg
-listen: https://tidal.com/album/160464940/u
+title: Besties
+artist: Black Country, New Road
+year: 2025
+genre: Art Rock
+cover: /assets/covers/besties.jpg
+listen: https://tidal.com/album/410253881/u
 ---
