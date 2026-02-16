@@ -1,9 +1,10 @@
 ---
 layout: disco
-title: Besties
-artist: Black Country, New Road
-year: 2025
-genre: Art Rock
-cover: /assets/covers/besties.jpg
-listen: https://tidal.com/album/410253881/u
+title: Colors
+artist: Beck
+year: 2017
+genre: Pop
+cover: /assets/covers/colors.jpg
+listen: https://tidal.com/album/79635986/u
 ---
+
