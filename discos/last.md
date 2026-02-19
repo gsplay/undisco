@@ -1,10 +1,9 @@
 ---
 layout: disco
-title: Colors
-artist: Beck
-year: 2017
-genre: Pop
-cover: /assets/covers/colors.jpg
-listen: https://tidal.com/album/79635986/u
+title: Soulive
+artist: Soulive
+year: 2003
+genre: Jazz Fusion 
+cover: /assets/covers/soulive.jpg
+listen: https://tidal.com/album/1351304/u
 ---
-
