@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Amor Amarillo
-artist: Gustavo Cerati
-year: 1993
-genre: Rock Alternativo
-cover: /assets/covers/amor_amarillo.jpg
-listen: https://tidal.com/album/3063271/u
+title: The Last Broadcast
+artist: Doves
+year: 2002
+genre: Rock
+cover: /assets/covers/the_last_broadcast.jpg
+listen: https://tidal.com/album/121931/u
 ---
