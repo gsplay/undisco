@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: The Last Broadcast
-artist: Doves
-year: 2002
-genre: Rock
-cover: /assets/covers/the_last_broadcast.jpg
-listen: https://tidal.com/album/121931/u
+title: R+R=Now Live
+artist: R+R=NOW
+year: 2021
+genre: Jazz Fusion
+cover: /assets/covers/rrnow_live.jpg
+listen: https://tidal.com/album/172590736/u
 ---
