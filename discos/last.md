@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Bays
-artist: Fat Freddy's Drop
-year: 2015
-genre: Dub
-cover: /assets/covers/bays.jpg
-listen: https://tidal.com/album/107936769/u
+title: Venice
+artist: Anderson .Paak
+year: 2014
+genre: R&B
+cover: /assets/covers/venice.jpg
+listen: https://tidal.com/album/287524648/u
 ---
