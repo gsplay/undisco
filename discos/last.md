@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Venice
-artist: Anderson .Paak
-year: 2014
-genre: R&B
-cover: /assets/covers/venice.jpg
-listen: https://tidal.com/album/287524648/u
+title: In the Aeroplane Over the Sea
+artist: Neutral Milk Hotel
+year: 1998
+genre: Indie Rock
+cover: /assets/covers/in_the_aeroplane_over_the_sea.jpg
+listen: https://tidal.com/album/37265686/u
 ---
