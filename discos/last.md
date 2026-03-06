@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: In the Aeroplane Over the Sea
-artist: Neutral Milk Hotel
-year: 1998
-genre: Indie Rock
-cover: /assets/covers/in_the_aeroplane_over_the_sea.jpg
-listen: https://tidal.com/album/37265686/u
+title: Currents
+artist: Tame Impala
+year: 2015
+genre: Pop
+cover: /assets/covers/currents.jpg
+listen: https://tidal.com/album/47696788/u
 ---
