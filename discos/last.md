@@ -1,9 +1,9 @@
 ---
 layout: disco
-title: Burn Bridges, Burn Pies
-artist: OhBree
-year: 2018
+title: Debonair
+artist: Horsey
+year: 2021
 genre: Indie
-cover: /assets/covers/burn_bridges_burn_pies.jpg
-listen: https://tidal.com/album/73661561/u
+cover: /assets/covers/debonair.jpg
+listen: https://tidal.com/album/190802941/u
 ---
